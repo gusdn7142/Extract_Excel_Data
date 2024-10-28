@@ -31,13 +31,13 @@ public class ExcelService {
 
             Row row = worksheet.getRow(i);
             ExcelDataInfo excelData = new ExcelDataInfo();
-            excelData.updateName(row.getCell(0).getStringCellValue());
-            excelData.updateAddress(row.getCell(1).getStringCellValue());
-            excelData.updatePhone(row.getCell(2).getStringCellValue());
-            excelData.updateEmail(row.getCell(3).getStringCellValue());
-            excelData.updateComment(row.getCell(4).getStringCellValue());
-            excelData.updateBirthDay(row.getCell(5).getStringCellValue());
-            excelData.updateJob(row.getCell(6).getStringCellValue());
+            excelData.updateName(row.getCell(0) != null ? row.getCell(0).getStringCellValue() : "");
+            excelData.updateAddress(row.getCell(1) != null ? row.getCell(1).getStringCellValue() : "");
+            excelData.updatePhone(row.getCell(2) != null ? row.getCell(2).getStringCellValue() : "");
+            excelData.updateEmail(row.getCell(3) != null ? row.getCell(3).getStringCellValue() : "");
+            excelData.updateComment(row.getCell(4) != null ? row.getCell(4).getStringCellValue() : "");
+            excelData.updateBirthDay(row.getCell(5) != null ? row.getCell(5).getStringCellValue() : "");
+            excelData.updateJob(row.getCell(6) != null ? row.getCell(6).getStringCellValue() : "");
 
             excelDataInfoList.add(excelData);
         }
