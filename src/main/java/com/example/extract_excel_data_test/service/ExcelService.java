@@ -27,9 +27,13 @@ public class ExcelService {
         List<ExcelDataInfo> excelDataInfoList = new ArrayList<>();
 
         //3-1) Extract cellValue by row in excel
-        for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) {
+        for (int i = 1; i <= worksheet.getLastRowNum(); i++) {
 
             Row row = worksheet.getRow(i);
+            if(row == null){
+                continue;
+            }
+
             ExcelDataInfo excelData = new ExcelDataInfo();
             excelData.updateName(row.getCell(0) != null ? row.getCell(0).getStringCellValue() : "");
             excelData.updateAddress(row.getCell(1) != null ? row.getCell(1).getStringCellValue() : "");
