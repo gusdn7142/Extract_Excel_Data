@@ -1,0 +1,12 @@
+.idea
+conf
+logs
+server-tomcat
+target
+temp
+war_directory
+webapps
+work
+HELP.md
+mvnw
+mvnw.cmd
