@@ -24,7 +24,7 @@ public class ExcelController {
 
     @PostMapping("/extractdata")
     public void extractDataFromExcel(@RequestParam("excelFile") MultipartFile excelFile) throws IOException, IllegalAccessException {
-        List<ExcelDataInfo> excelDataInfoList = excelService.extractDataFrom(excelFile);
+        List<ExcelDataInfo> excelDataInfoList = excelService.extractDataFromV2(excelFile, ExcelDataInfo::new);
         excelDataInfoList.stream().forEach(excelDataInfo -> {log.info("excelDataInfo = {}",excelDataInfo);});
     }
 }
